@@ -7,6 +7,7 @@ class Dashboard extends StatefulWidget {
 
 class _Dashboard extends State<Dashboard> {
   // This widget is the root of your application.
+  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +21,12 @@ class _Dashboard extends State<Dashboard> {
         backgroundColor: Colors.green[600],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        iconSize: 25,
+        selectedFontSize: 15,
         backgroundColor: Colors.green[600],
         selectedItemColor: Colors.grey[200],
         unselectedItemColor: Colors.grey[400],
-        currentIndex: 0,
+        currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Dashboard'),
@@ -31,11 +34,12 @@ class _Dashboard extends State<Dashboard> {
           BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'Reminders'),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Tutorials'),
-          //BottomNavigationBarItem(icon: Icon(Icons.search), title: Text('Search', styleN: TextStyle(color: Colors.green[600])),),
-          //BottomNavigationBarItem(icon: Icon(Icons.notifications), title: Text('Reminders', style: TextStyle(color: Colors.green[600])),),
-          //BottomNavigationBarItem(icon: Icon(Icons.settings), title: Text('Settings', style: TextStyle(color: Colors.green[600])),),
-         // BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Tutorials', style: TextStyle(color: Colors.green[600])),),
         ],
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
       ),
     );
   }
