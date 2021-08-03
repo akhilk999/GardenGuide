@@ -11,13 +11,13 @@ class _Dashboard extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[600],
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         iconTheme: IconThemeData(
-          color: Colors.green[600],
+          color: Colors.grey[200],
         ),
-        title: Text('Dashboard', style: TextStyle(fontSize: 20,color: Colors.green[600],)),
-        backgroundColor: Colors.grey[200],
+        title: Text('Dashboard', style: TextStyle(fontSize: 20,color: Colors.grey[200],)),
+        backgroundColor: Colors.green[600],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
@@ -28,7 +28,7 @@ class _Dashboard extends State<Dashboard> {
           BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'Reminders'),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Tutorials'),
-          //BottomNavigationBarItem(icon: Icon(Icons.search), title: Text('Search', style: TextStyle(color: Colors.green[600])),),
+          //BottomNavigationBarItem(icon: Icon(Icons.search), title: Text('Search', styleN: TextStyle(color: Colors.green[600])),),
           //BottomNavigationBarItem(icon: Icon(Icons.notifications), title: Text('Reminders', style: TextStyle(color: Colors.green[600])),),
           //BottomNavigationBarItem(icon: Icon(Icons.settings), title: Text('Settings', style: TextStyle(color: Colors.green[600])),),
          // BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Tutorials', style: TextStyle(color: Colors.green[600])),),
