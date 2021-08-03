@@ -20,6 +20,9 @@ class _Dashboard extends State<Dashboard> {
         backgroundColor: Colors.green[600],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.green[600],
+        selectedItemColor: Colors.grey[200],
+        unselectedItemColor: Colors.grey[400],
         currentIndex: 0,
         type: BottomNavigationBarType.fixed,
         items: [
