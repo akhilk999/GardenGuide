@@ -1,23 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:gardening_app/main.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class Settings extends StatefulWidget {
+
+class Settings extends StatelessWidget {
   @override
-  _SettingsState createState() => _SettingsState();
+  Widget build(BuildContext context) {
+    return DarkLightTheme();
+  }
 }
 
-class _SettingsState extends State<Settings> {
+class DarkLightTheme extends StatefulWidget {
+  @override
+  _DarkLightThemeState createState() => _DarkLightThemeState();
+}
+
+
+class _DarkLightThemeState extends State<DarkLightTheme> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Hello'),
+        child: Switch(value: _light, onChanged: (state){
+          _light = state;
+        }),
       ),
     );
   }
 }
 
-void main() {
+/*void main() {
   runApp(
     ChangeNotifierProvider<ThemeState>(
       builder: (context) => ThemeState(),
@@ -25,7 +38,6 @@ void main() {
     ),  //ChangeNotifierProvider
   );
 }
-
 class App extends StatelessWidget {
   get Provider => null;
 
@@ -35,10 +47,12 @@ class App extends StatelessWidget {
       theme: Provider.of<ThemeState>(context).theme == ThemeType.Dark
           ? ThemeData.dark()
           : ThemeData.light(),
-      
+
     );
   }
 }
+
+
 
 enum ThemeType { Dark, Light }
 
@@ -54,7 +68,7 @@ class ThemeState extends ChangeNotifier {
 
   ThemeType get theme => bool_isDarkTheme ? ThemeType.Dark : ThemeType.Light;
 
-  get SharedPreferences => null;
+  //get SharedPreferences => null;
   set theme(ThemeType type) => setTheme(type);
 
   void setTheme(ThemeType type) async {
@@ -72,14 +86,14 @@ class ThemeState extends ChangeNotifier {
   }
 }
 
-class Home extends StatefulWidget {
+class Settings extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return HomeState();
+    return SettingsState();
   }
 }
 
-class HomeState extends State<Home> {
+class SettingsState extends State<Settings> {
   get Provider => null;
 
   @override
@@ -99,3 +113,4 @@ class HomeState extends State<Home> {
     );
   }
 }
+*/

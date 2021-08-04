@@ -2,15 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:gardening_app/dashboard.dart';
 import 'package:gardening_app/reminders.dart';
 import 'package:gardening_app/search.dart';
-import 'package:gardening_app/settings.dart';
+import 'settings.dart';
 import 'package:gardening_app/tutorials.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MainScreen(
   ));
 }
 
+ThemeData _lightTheme = ThemeData(
+    accentColor: Colors.pink,
+    brightness: Brightness.light,
+    primaryColor: Colors.blue
+);
+
+ThemeData _darkTheme = ThemeData(
+    accentColor: Colors.red,
+    brightness: Brightness.dark,
+    primaryColor: Colors.amber
+);
+bool _light = true;
 class MainScreen extends StatefulWidget {
+  //get Provider => null;
   @override
   _MainScreenState createState() => _MainScreenState();
 }
@@ -19,7 +33,11 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: BottomBar()
+        /*theme: Provider.of<ThemeState>(context).theme == ThemeType.Dark
+            ? ThemeData.dark()
+            : ThemeData.light(),*/
+        theme: _light ? _lightTheme : _darkTheme,
+        home: BottomBar()
     );
   }
 }
