@@ -4,12 +4,19 @@ import 'package:gardening_app/reminders.dart';
 import 'package:gardening_app/search.dart';
 import 'settings.dart';
 import 'package:gardening_app/tutorials.dart';
-import 'package:provider/provider.dart';
 
 void main() {
   runApp(MainScreen(
   ));
 }
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return DarkLightTheme();
+  }
+}
+
 
 ThemeData _lightTheme = ThemeData(
     accentColor: Colors.pink,

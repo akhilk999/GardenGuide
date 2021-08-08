@@ -16,6 +16,7 @@ class DarkLightTheme extends StatefulWidget {
   _DarkLightThemeState createState() => _DarkLightThemeState();
 }
 
+bool _light = true;
 
 class _DarkLightThemeState extends State<DarkLightTheme> {
   @override
@@ -23,8 +24,10 @@ class _DarkLightThemeState extends State<DarkLightTheme> {
     return Scaffold(
       body: Center(
         child: Switch(value: _light, onChanged: (state){
-          _light = state;
-        }),
+          setState(() {
+            _light = state;
+          });
+        })
       ),
     );
   }
