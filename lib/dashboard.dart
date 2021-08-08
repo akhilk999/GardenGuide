@@ -10,7 +10,7 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Hello'),
+        child: Text('Favorites'),
       ),
     );
   }
