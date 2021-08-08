@@ -11,11 +11,13 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
         body: Container(
           child: Align(
-            alignment: Alignment.topCenter,
+            alignment: Alignment(0.00,-0.90),
             child:Text('Favorites',
                 style: TextStyle(fontSize: 30)
+
             ),
           ),
         ));
+
   }
 }
