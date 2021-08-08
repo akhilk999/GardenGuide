@@ -9,9 +9,13 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Favorites'),
-      ),
-    );
+        body: Container(
+          child: Align(
+            alignment: Alignment.topCenter,
+            child:Text('Favorites',
+                style: TextStyle(fontSize: 30)
+            ),
+          ),
+        ));
   }
 }
