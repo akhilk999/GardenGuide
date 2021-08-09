@@ -10,7 +10,13 @@ void main() {
   ));
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return DarkLightTheme();
+  }
+}
+class DarkLightTheme extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return DarkLightTheme();
@@ -53,6 +59,7 @@ class BottomBar extends StatefulWidget {
   @override
   _BottomBarState createState() => _BottomBarState();
 }
+
 
 class _BottomBarState extends State<BottomBar> {
   int _currentIndex = 0;

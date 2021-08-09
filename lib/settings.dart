@@ -23,15 +23,25 @@ class _DarkLightThemeState extends State<DarkLightTheme> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Switch(value: _light, onChanged: (state){
+        child: Column(
+          children: <Widget>[
+          TextField(
+
+            ),
+
+          Switch(value: _light, onChanged: (state){
           setState(() {
             _light = state;
           });
         })
+        ]
       ),
+    )
     );
   }
 }
+
+
 
 /*void main() {
   runApp(
