@@ -26,9 +26,10 @@ class _DarkLightThemeState extends State<DarkLightTheme> {
         child: Column(
           children: <Widget>[
           TextField(
-
+            decoration: InputDecoration(
+              labelText: "                                   Dark/Light Mode"
             ),
-
+          ),
           Switch(value: _light, onChanged: (state){
           setState(() {
             _light = state;
