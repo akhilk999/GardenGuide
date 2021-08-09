@@ -10,34 +10,8 @@ void main() {
   ));
 }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return DarkLightTheme();
-  }
-}
-class DarkLightTheme extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return DarkLightTheme();
-  }
-}
 
-
-ThemeData _lightTheme = ThemeData(
-    accentColor: Colors.pink,
-    brightness: Brightness.light,
-    primaryColor: Colors.blue
-);
-
-ThemeData _darkTheme = ThemeData(
-    accentColor: Colors.red,
-    brightness: Brightness.dark,
-    primaryColor: Colors.amber
-);
-bool _light = true;
 class MainScreen extends StatefulWidget {
-  //get Provider => null;
   @override
   _MainScreenState createState() => _MainScreenState();
 }
@@ -45,12 +19,17 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        /*theme: Provider.of<ThemeState>(context).theme == ThemeType.Dark
-            ? ThemeData.dark()
-            : ThemeData.light(),*/
-        theme: _light ? _lightTheme : _darkTheme,
-        home: BottomBar()
+    return ThemeBuilder(
+        defaultBrightness: Brightness.light,
+        builder: (context, _brightness) {
+          return MaterialApp(
+              theme: ThemeData(
+                  primarySwatch: Colors.blue,
+                  brightness: _brightness
+              ),
+              home: BottomBar()
+          );
+        }
     );
   }
 }
@@ -67,9 +46,9 @@ class _BottomBarState extends State<BottomBar> {
   final List<Widget> children = [
     Dashboard(),
     Search(),
+    Tutorial(),
     Reminders(),
     Settings(),
-    Tutorial(),
   ];
 
 
@@ -98,9 +77,9 @@ class _BottomBarState extends State<BottomBar> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Dashboard'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+          BottomNavigationBarItem(icon: Icon(Icons.help), label: 'Tutorials'),
           BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'Reminders'),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Tutorials'),
         ],
         onTap: (index) {
           setState(() {
@@ -110,11 +89,11 @@ class _BottomBarState extends State<BottomBar> {
               break;
               case 1: {_title = 'Search';}
               break;
-              case 2: {_title = 'Reminders';}
+              case 2: {_title = 'Tutorials';}
               break;
-              case 3: {_title = 'Settings';}
+              case 3: {_title = 'Reminders';}
               break;
-              case 4: {_title = 'Tutorials';}
+              case 4: {_title = 'Settings';}
               break;
             }
           });
