@@ -60,6 +60,45 @@ abstract class AppColors {
   static const Color accentColor = Color(0xFFef8354);
 }
 class _RemindersState extends State<Reminders> {
+  final TextEditingController controller = new TextEditingController();
+
+  String result = "";
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(height: 30,),
+              Container(
+                width: 300,
+                child: TextField(
+                  decoration: new InputDecoration(
+                      hintText: "Type here"
+                  ),
+                  onSubmitted: (String str) {
+                    setState(() {
+                      result = result + "\n" + str;
+                    });
+                    controller.text = '';
+                  },
+                  controller: controller,
+                ),
+              ),
+              new Text(result, style: TextStyle(fontSize: 30))
+            ],
+          ),
+        ),
+      ),
+    )
+    );
+  }
+}
+  /*
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -67,7 +106,7 @@ class _RemindersState extends State<Reminders> {
       child: GestureDetector(
         onTap: () {
           Navigator.of(context).push(HeroDialogRoute(builder: (context) {
-            return const _AddTodoPopupCard(key: null,);
+            return  _AddTodoPopupCard(key: ValueKey(null));
           }));
         },
         child: Hero(
@@ -99,58 +138,76 @@ const String _heroAddTodo = 'add-todo-hero';
 ///
 /// Uses a [Hero] with tag [_heroAddTodo].
 /// {@endtemplate}
-class _AddTodoPopupCard extends StatelessWidget {
+class _AddTodoPopupCard extends StatefulWidget {
+
+  _AddTodoPopupCard({required Key key}) : super(key: key);
+
+  @override
+  __AddTodoPopupCardState createState() => new __AddTodoPopupCardState();
+}
+
+class __AddTodoPopupCardState extends State<_AddTodoPopupCard> {
   /// {@macro add_todo_popup_card}
-  const _AddTodoPopupCard({required Key key}) : super(key: key);
+  String result = "";
+  late TextEditingController _controller = TextEditingController();
+
+  TextEditingController _controller2 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(32.0),
-        child: Hero(
+    return new Center(
+      child: new Padding(
+        padding: new EdgeInsets.all(32.0),
+        child: new Hero(
           tag: _heroAddTodo,
           //createRectTween: (begin, end) {
            // return CustomRectTween(begin: begin, end: end);
           //},
-          child: Material(
+          child: new Material(
             color: AppColors.accentColor,
             elevation: 2,
             shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
+            new RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
+            child: new SingleChildScrollView(
+              child: new Padding(
+                padding: new EdgeInsets.all(16.0),
+                child: new Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const TextField(
-                      decoration: InputDecoration(
+                    new TextField(
+                      decoration: new InputDecoration(
                         hintText: 'New todo',
                         border: InputBorder.none,
                       ),
                       cursorColor: Colors.white,
+                      controller: _controller,
                     ),
                     const Divider(
                       color: Colors.white,
                       thickness: 0.2,
                     ),
-                    const TextField(
+                    TextField(
+                      controller: _controller2,
                       decoration: InputDecoration(
                         hintText: 'Write a note',
                         border: InputBorder.none,
                       ),
                       cursorColor: Colors.white,
-                      maxLines: 6,
+                      //maxLines: 6,
+                      onSubmitted: (String str) {
+
+                      },
                     ),
                     const Divider(
                       color: Colors.white,
                       thickness: 0.2,
                     ),
                     FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);},
                       child: const Text('Add'),
                     ),
+                    new Text(result)
                   ],
                 ),
               ),
@@ -184,4 +241,4 @@ class ConstrainedView extends StatelessWidget {
     );
   }
 }
-
+*/
