@@ -67,38 +67,38 @@ class _RemindersState extends State<Reminders> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(height: 30,),
-              Container(
-                width: 300,
-                child: TextField(
-                  decoration: new InputDecoration(
-                      hintText: "Type here"
+        body: SingleChildScrollView(
+          child: Container(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(height: 30,),
+                  Container(
+                    width: 300,
+                    child: TextField(
+                      decoration: new InputDecoration(
+                          hintText: "Type here"
+                      ),
+                      onSubmitted: (String str) {
+                        setState(() {
+                          result = result + "\n" + str;
+                        });
+                        controller.text = '';
+                      },
+                      controller: controller,
+                    ),
                   ),
-                  onSubmitted: (String str) {
-                    setState(() {
-                      result = result + "\n" + str;
-                    });
-                    controller.text = '';
-                  },
-                  controller: controller,
-                ),
+                  new Text(result, style: TextStyle(fontSize: 30))
+                ],
               ),
-              new Text(result, style: TextStyle(fontSize: 30))
-            ],
+            ),
           ),
-        ),
-      ),
-    )
+        )
     );
   }
 }
-  /*
+/*
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -111,8 +111,6 @@ class _RemindersState extends State<Reminders> {
         },
         child: Hero(
           tag: _heroAddTodo,
-
-
           child: Material(
             color: AppColors.accentColor,
             elevation: 2,
@@ -122,16 +120,13 @@ class _RemindersState extends State<Reminders> {
               Icons.add_rounded,
               size: 56,
             ),
-
           )
         ),
       ),
     );
   }
 }
-
 const String _heroAddTodo = 'add-todo-hero';
-
 /// {@template add_todo_popup_card}
 /// Popup card to add a new [Todo]. Should be used in conjuction with
 /// [HeroDialogRoute] to achieve the popup effect.
@@ -139,20 +134,15 @@ const String _heroAddTodo = 'add-todo-hero';
 /// Uses a [Hero] with tag [_heroAddTodo].
 /// {@endtemplate}
 class _AddTodoPopupCard extends StatefulWidget {
-
   _AddTodoPopupCard({required Key key}) : super(key: key);
-
   @override
   __AddTodoPopupCardState createState() => new __AddTodoPopupCardState();
 }
-
 class __AddTodoPopupCardState extends State<_AddTodoPopupCard> {
   /// {@macro add_todo_popup_card}
   String result = "";
   late TextEditingController _controller = TextEditingController();
-
   TextEditingController _controller2 = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return new Center(
@@ -195,7 +185,6 @@ class __AddTodoPopupCardState extends State<_AddTodoPopupCard> {
                       cursorColor: Colors.white,
                       //maxLines: 6,
                       onSubmitted: (String str) {
-
                       },
                     ),
                     const Divider(
@@ -218,17 +207,14 @@ class __AddTodoPopupCardState extends State<_AddTodoPopupCard> {
     );
   }
 }
-
 class ConstrainedView extends StatelessWidget {
   const ConstrainedView({
     Key? key,
     required this.child,
     this.width = 250,
   }) : super(key: key);
-
   final Widget child;
   final double width;
-
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
