@@ -50,8 +50,6 @@ abstract class AppColors {
   /// Dark background color.
   static const Color backgroundColor = Color(0xFF191D1F);
 
-  /// Slightly lighter version of [backgroundColor].
-  static const Color backgroundFadedColor = Color(0xFF191B1C);
 
   /// Color used for cards and surfaces.
   static const Color cardColor = Color(0xFF1F2426);
@@ -60,7 +58,7 @@ abstract class AppColors {
   static const Color accentColor = Color(0xFFef8354);
 }
 class _RemindersState extends State<Reminders> {
-  final TextEditingController controller = new TextEditingController();
+  TextEditingController passController = new TextEditingController();
 
   String result = "";
 /*
@@ -149,6 +147,7 @@ class __AddTodoPopupCardState extends State<_AddTodoPopupCard> {
   TextEditingController _controller2 = TextEditingController();
 
   var controller;
+  var controller2;
   @override
   Widget build(BuildContext context) {
     return new Center(
@@ -175,7 +174,7 @@ class __AddTodoPopupCardState extends State<_AddTodoPopupCard> {
                         hintText: 'New todo',
                         border: InputBorder.none,
                       ),
-                      cursorColor: Colors.white,
+                      cursorColor: Colors.green,
                       controller: _controller,
                     ),
                     const Divider(
@@ -200,7 +199,9 @@ class __AddTodoPopupCardState extends State<_AddTodoPopupCard> {
                       thickness: 0.2,
                     ),
                     RaisedButton(onPressed: () {
-                        Navigator.pop(context);},
+                      _controller=controller.text;
+                      _controller2=_controller2.text as TextEditingController;
+                      Navigator.pop(context);},
                       child: const Text('Add'),
                     ),
                     new Text(result, style: TextStyle(fontSize: 30))
