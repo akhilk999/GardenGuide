@@ -63,7 +63,7 @@ class _RemindersState extends State<Reminders> {
   final TextEditingController controller = new TextEditingController();
 
   String result = "";
-
+/*
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,6 +99,10 @@ class _RemindersState extends State<Reminders> {
   }
 }
 /*
+
+
+ */
+ */
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -143,6 +147,8 @@ class __AddTodoPopupCardState extends State<_AddTodoPopupCard> {
   String result = "";
   late TextEditingController _controller = TextEditingController();
   TextEditingController _controller2 = TextEditingController();
+
+  var controller;
   @override
   Widget build(BuildContext context) {
     return new Center(
@@ -187,16 +193,17 @@ class __AddTodoPopupCardState extends State<_AddTodoPopupCard> {
                       onSubmitted: (String str) {
                       },
                     ),
+
+
                     const Divider(
-                      color: Colors.white,
+                      color: Colors.green,
                       thickness: 0.2,
                     ),
-                    FlatButton(
-                      onPressed: () {
+                    RaisedButton(onPressed: () {
                         Navigator.pop(context);},
                       child: const Text('Add'),
                     ),
-                    new Text(result)
+                    new Text(result, style: TextStyle(fontSize: 30))
                   ],
                 ),
               ),
@@ -227,4 +234,4 @@ class ConstrainedView extends StatelessWidget {
     );
   }
 }
-*/
+
