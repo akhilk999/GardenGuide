@@ -108,7 +108,7 @@ class _RemindersState extends State<Reminders> {
       child: GestureDetector(
         onTap: () {
           Navigator.of(context).push(HeroDialogRoute(builder: (context) {
-            return  _AddTodoPopupCard(key: ValueKey(null));
+            return  _AddTodoPopupCard(key: ValueKey('ok'));
           }));
         },
         child: Hero(
@@ -199,12 +199,13 @@ class __AddTodoPopupCardState extends State<_AddTodoPopupCard> {
                       thickness: 0.2,
                     ),
                     RaisedButton(onPressed: () {
-                      _controller=controller.text;
-                      _controller2=_controller2.text as TextEditingController;
-                      Navigator.pop(context);},
+                      controller=_controller.text;
+                      //_controller2=_controller2.text as TextEditingController;
+                      Navigator.pop(context);
+                      },
                       child: const Text('Add'),
                     ),
-                    new Text(result, style: TextStyle(fontSize: 30))
+                    new Text(controller, style: TextStyle(fontSize: 30))
                   ],
                 ),
               ),
