@@ -195,25 +195,21 @@ class _RemindersState extends State<Reminders> {
                     children: [
                       Container(
                         width: (MediaQuery.of(context).size.width / 2) - 20,
-                        child: RaisedButton(
-                          color: Colors.white,
-                          child: Text(
-                            'RESET',
-                            style: GoogleFonts.montserrat(),
-                          ),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.white),
                           onPressed: () => _taskController.text = '',
-                        ),
+                          child: Text('RESET', style: TextStyle(color: Colors.black)),
+                        )
                       ),
                       Container(
                         width: (MediaQuery.of(context).size.width / 2) - 20,
-                        child: RaisedButton(
-                          color: Colors.blue,
-                          child: Text(
-                            'ADD',
-                            style: GoogleFonts.montserrat(),
-                          ),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.blue),
                           onPressed: () => saveData(),
-                        ),
+                          child: Text('ADD', style: TextStyle(color: Colors.black)),
+                        )
                       ),
                     ],
                   ),
