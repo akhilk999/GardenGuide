@@ -13,6 +13,15 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.grey[200],
+        ),
+        title: Text(
+            "Settings",
+            style: TextStyle(fontSize: 20,color: Colors.grey[200],)),
+        backgroundColor: Colors.green[600],
+      ),
         body: Center(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

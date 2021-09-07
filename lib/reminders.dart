@@ -79,9 +79,9 @@ class _RemindersState extends State<Reminders> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Task Manager',
-          style: GoogleFonts.montserrat(),
-        ),
+          'Reminders',
+            style: TextStyle(fontSize: 20,color: Colors.grey[200],)),
+        backgroundColor: Colors.green[600],
         actions: [
           IconButton(
             icon: Icon(Icons.save),
@@ -146,7 +146,7 @@ class _RemindersState extends State<Reminders> {
           Icons.add,
           color: Colors.white,
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.green[600],
         onPressed: () => showModalBottomSheet(
           context: context,
           builder: (BuildContext context) => Container(

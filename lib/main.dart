@@ -57,15 +57,7 @@ class _BottomBarState extends State<BottomBar> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: children[_currentIndex],
-      appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.grey[200],
-        ),
-        title: Text(
-            _title,
-            style: TextStyle(fontSize: 20,color: Colors.grey[200],)),
-        backgroundColor: Colors.green[600],
-      ),
+
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 25,
         selectedFontSize: 15,
