@@ -83,6 +83,82 @@ class _RemindersState extends State<Reminders> {
             style: TextStyle(fontSize: 20,color: Colors.grey[200],)),
         backgroundColor: Colors.green[600],
         actions: [
+          IconButton(onPressed: () => showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) => Container(
+        padding: const EdgeInsets.all(10.0),
+        height: 250,
+        color: Colors.green[600],
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Add task',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.of(context).pop(),
+                  child: Icon(Icons.close),
+                ),
+              ],
+            ),
+            Divider(thickness: 1.2),
+            SizedBox(height: 20.0),
+            TextField(
+              controller: _taskController,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+                fillColor: Colors.white,
+                filled: true,
+                hintText: 'Enter task',
+                hintStyle: GoogleFonts.montserrat(),
+              ),
+            ),
+            SizedBox(height: 20.0),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 5.0),
+              width: MediaQuery.of(context).size.width,
+              // height: 200.0,
+              child: Row(
+                children: [
+                  Container(
+                      width: (MediaQuery.of(context).size.width / 2) - 30,
+                      height: (MediaQuery.of(context).size.width / 3) - 90,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            primary: Colors.white),
+                        onPressed: () => _taskController.text = '',
+                        child: Text('RESET', style: TextStyle(color: Colors.black)),
+                      )
+                  ),
+                  Container(
+                      width: (MediaQuery.of(context).size.width/3)-101,
+                  ),
+                  Container(
+                      width: (MediaQuery.of(context).size.width / 2) - 30,
+                      height: (MediaQuery.of(context).size.width / 3) - 90,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            primary: Colors.white),
+                        onPressed: () => saveData(),
+                        child: Text('ADD', style: TextStyle(color: Colors.black)),
+                      )
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+    icon: Icon(Icons.add)),
           IconButton(
             icon: Icon(Icons.save),
             onPressed: updatePendingTasksList,
@@ -140,84 +216,6 @@ class _RemindersState extends State<Reminders> {
           ),
         ))
             .toList(),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
-        backgroundColor: Colors.green[600],
-        onPressed: () => showModalBottomSheet(
-          context: context,
-          builder: (BuildContext context) => Container(
-            padding: const EdgeInsets.all(10.0),
-            height: 250,
-            color: Colors.blue[200],
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Add task',
-                      style: GoogleFonts.montserrat(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () => Navigator.of(context).pop(),
-                      child: Icon(Icons.close),
-                    ),
-                  ],
-                ),
-                Divider(thickness: 1.2),
-                SizedBox(height: 20.0),
-                TextField(
-                  controller: _taskController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                      borderSide: BorderSide(color: Colors.blue),
-                    ),
-                    fillColor: Colors.white,
-                    filled: true,
-                    hintText: 'Enter task',
-                    hintStyle: GoogleFonts.montserrat(),
-                  ),
-                ),
-                SizedBox(height: 20.0),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                  width: MediaQuery.of(context).size.width,
-                  // height: 200.0,
-                  child: Row(
-                    children: [
-                      Container(
-                        width: (MediaQuery.of(context).size.width / 2) - 20,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white),
-                          onPressed: () => _taskController.text = '',
-                          child: Text('RESET', style: TextStyle(color: Colors.black)),
-                        )
-                      ),
-                      Container(
-                        width: (MediaQuery.of(context).size.width / 2) - 20,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              primary: Colors.blue),
-                          onPressed: () => saveData(),
-                          child: Text('ADD', style: TextStyle(color: Colors.black)),
-                        )
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
       ),
     );
   }
