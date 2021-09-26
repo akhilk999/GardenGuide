@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gardening_app/Starting a Garden/step1.dart';
 
 class Tutorial extends StatefulWidget {
   @override
@@ -19,7 +20,14 @@ class _TutorialState extends State<Tutorial> {
         backgroundColor: Colors.green[600],
       ),
       body: Center(
-        child: Text('Hello'),
+        child: TextButton(
+            style: TextButton.styleFrom(textStyle: TextStyle(fontSize: 20)),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Step1()));
+            },
+            child: Text('Starting a Garden', style: TextStyle(color: Colors.black))),
       ),
     );
   }

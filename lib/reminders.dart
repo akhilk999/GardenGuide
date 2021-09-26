@@ -115,7 +115,7 @@ class _RemindersState extends State<Reminders> {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5.0),
                 ),
-                fillColor: Colors.green,
+                fillColor: Colors.grey[200],
                 filled: true,
                 hintText: 'Enter task',
                 hintStyle: GoogleFonts.montserrat(),
