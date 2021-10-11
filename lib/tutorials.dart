@@ -27,7 +27,9 @@ class _TutorialState extends State<Tutorial> {
                 context,
                 MaterialPageRoute(builder: (context) => Step1()));
             },
-            child: Text('Starting a Garden', style: TextStyle(color: Colors.black))),
+            child: Text('Starting a Garden',
+               // style: TextStyle(color: Colors.black)
+            )),
       ),
     );
   }
