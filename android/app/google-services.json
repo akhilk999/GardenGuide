@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "124422177138",
+    "project_id": "gardenguide-5dfa0",
+    "storage_bucket": "gardenguide-5dfa0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124422177138:android:1badc960f73346af921deb",
+        "android_client_info": {
+          "package_name": "com.akhilkasamsetty.gardening_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124422177138-rbaa74goq35ul2cgdo6npp89k6rbag5m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9PF6Hj2DJwaOvuuoNMrfaTf3hi1JUrAY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "124422177138-rbaa74goq35ul2cgdo6npp89k6rbag5m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
