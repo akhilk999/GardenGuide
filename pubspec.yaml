@@ -50,6 +50,11 @@ flutter:
     - images/flower-garden.jpg
     - images/herb-garden.jpg
     - images/vegetable-garden.jpg
+    - images/container-garden.jpeg
+    - images/ground-garden.jpg
+    - images/combination.jpg
+    - images/example1.jpg
+    - images/example2.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

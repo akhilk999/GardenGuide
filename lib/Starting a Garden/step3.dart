@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:gardening_app/Starting a Garden/step3.dart';
+import 'package:gardening_app/Starting a Garden/recs.dart';
+import 'package:gardening_app/Starting a Garden/step4.dart';
 
-class Step2 extends StatefulWidget {
+class Step3 extends StatefulWidget {
   @override
-  _Step2State createState() => _Step2State();
+  _Step3State createState() => _Step3State();
 }
 
-class _Step2State extends State<Step2> {
+class _Step3State extends State<Step3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,23 +25,40 @@ class _Step2State extends State<Step2> {
           children: [
             Flexible(
               child: FractionallySizedBox(
-                heightFactor: 0.3,
+                heightFactor: 0.5,
               ),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(0,10,0,3),
-              child: Text('Step 2: Figure out what your garden will look like.', style: TextStyle(fontSize: 17)),
+              child: Text('Step 3: Determine which plants you want to garden.', style: TextStyle(fontSize: 16)),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(0,0,0,10),
-              child: Text('Would it grow in the ground, in containers, or both?', style: TextStyle(fontSize: 16)),
+              child: Text('For help on deciding, go to our recommendations page:', style: TextStyle(fontSize: 15)),
             ),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.5,
               ),
             ),
-            Image.asset('images/container-garden.jpeg', scale: 5),
+            ElevatedButton(onPressed:() {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Recs()));
+            }, child: Text('Recommendations')),
+            Flexible(
+              child: FractionallySizedBox(
+                heightFactor: 0.8,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0,10,0,7),
+              child: Text('Step 4: Find an area to begin your garden.', style: TextStyle(fontSize: 18)),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(15,0,0,15),
+              child: Text('Try to pick a flat area with lots of sun & protection from the wind.', style: TextStyle(fontSize: 14)),
+            ),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.1,
@@ -48,42 +66,34 @@ class _Step2State extends State<Step2> {
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(22.0,0,0,0),
-              child: Text('Container gardens grow plants in containers and pots.                   - good for urban areas', style: TextStyle(fontSize: 13)),
+              child: Text('Placing plants near fences are common because it blocks the plants from the wind while still providing sunlight.', style: TextStyle(fontSize: 12)),
             ),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.2,
               ),
             ),
-            Image.asset('images/ground-garden.jpg', scale: 2.65),
+            Image.asset('images/example1.jpg', scale: 1.4),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.1,
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(22.0,0,0,0),
-              child: Text('Ground gardens grow large plants in the ground.                            - good for backyards', style: TextStyle(fontSize: 13)),
             ),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.3,
               ),
             ),
-            Image.asset('images/combination.jpg', scale: 7.5),
+            Image.asset('images/example2.jpg', scale: 3),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.1,
               ),
             ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(22,0,15,10),
-              child: Text('Both container and ground gardens can be combined as well.', style: TextStyle(fontSize: 13)),
-            ),
             ElevatedButton(onPressed:() {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Step3()));
+                  MaterialPageRoute(builder: (context) => Step4()));
             }, child: Text('Next')),
           ],
         ),

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:gardening_app/Starting a Garden/step3.dart';
+import 'package:gardening_app/Starting a Garden/recs.dart';
 
-class Step2 extends StatefulWidget {
+class Step4 extends StatefulWidget {
   @override
-  _Step2State createState() => _Step2State();
+  _Step4State createState() => _Step4State();
 }
 
-class _Step2State extends State<Step2> {
+class _Step4State extends State<Step4> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,17 +29,22 @@ class _Step2State extends State<Step2> {
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(0,10,0,3),
-              child: Text('Step 2: Figure out what your garden will look like.', style: TextStyle(fontSize: 17)),
+              child: Text('Step 3: Determine which plants you want to garden.', style: TextStyle(fontSize: 17)),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(0,0,0,10),
-              child: Text('Would it grow in the ground, in containers, or both?', style: TextStyle(fontSize: 16)),
+              child: Text('For help on deciding, go to our recommendations page:', style: TextStyle(fontSize: 16)),
             ),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.5,
               ),
             ),
+            ElevatedButton(onPressed:() {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Recs()));
+            }, child: Text('Next')),
             Image.asset('images/container-garden.jpeg', scale: 5),
             Flexible(
               child: FractionallySizedBox(
@@ -83,7 +88,7 @@ class _Step2State extends State<Step2> {
             ElevatedButton(onPressed:() {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Step3()));
+                  MaterialPageRoute(builder: (context) => Step4()));
             }, child: Text('Next')),
           ],
         ),
