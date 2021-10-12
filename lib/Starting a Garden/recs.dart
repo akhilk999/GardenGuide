@@ -8,6 +8,17 @@ class Recs extends StatefulWidget {
 class _RecsState extends State<Recs> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.grey[200],
+        ),
+        title: Text(
+            "Starting a Garden",
+            style: TextStyle(fontSize: 20,color: Colors.grey[200],)),
+        backgroundColor: Colors.green[600],
+      ),
+      body: Center(),
+    );
   }
 }

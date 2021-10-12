@@ -83,7 +83,7 @@ class _Step1State extends State<Step1> {
             ElevatedButton(onPressed:() {
             Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Step2()));
+            MaterialPageRoute(settings: RouteSettings(name: "/Step2"),builder: (context) => Step2()));
             }, child: Text('Next')),
           ],
         ),

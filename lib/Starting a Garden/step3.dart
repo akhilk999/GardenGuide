@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gardening_app/Starting a Garden/recs.dart';
-import 'package:gardening_app/Starting a Garden/step4.dart';
+import 'package:gardening_app/Starting a Garden/step5.dart';
 
 class Step3 extends StatefulWidget {
   @override
@@ -93,7 +93,7 @@ class _Step3State extends State<Step3> {
             ElevatedButton(onPressed:() {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Step4()));
+                  MaterialPageRoute(settings: RouteSettings(name: "/Step5"),builder: (context) => Step5()));
             }, child: Text('Next')),
           ],
         ),
