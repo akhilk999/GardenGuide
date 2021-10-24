@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:gardening_app/regions/idk.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 
 class Search extends StatefulWidget {
@@ -8,6 +10,15 @@ class Search extends StatefulWidget {
 
 class _SearchState extends State<Search> {
   late String search;
+  final textController = TextEditingController();
+  int charLength = 0;
+  final _formKey = GlobalKey<FormState>();
+
+  _onChanged(String value) {
+    setState(() {
+      charLength = value.length;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +44,11 @@ class _SearchState extends State<Search> {
                   textAlign: TextAlign.center,
                   onChanged: (value) {
                     search = value;
+                    /*if (value == 'Texas') {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(settings: RouteSettings(name: "/DontKnow"),builder: (context) => DontKnow()));
+                    }*/
                   },
                   decoration: InputDecoration(
                     hintText: 'Search',
@@ -43,6 +59,66 @@ class _SearchState extends State<Search> {
                   ),
                 ),
               ),
+                SizedBox(
+                  width: 350,
+                  child: TextField(
+                    textAlign: TextAlign.center,
+                    onChanged: (value) {
+                      search = value;
+                      /*if (value == 'Texas') {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(settings: RouteSettings(name: "/DontKnow"),builder: (context) => DontKnow()));
+                    }*/
+                    },
+                    decoration: InputDecoration(
+                      hintText: 'Search',
+                    ),
+                  ),
+                ),
+                Form(
+                  key: _formKey,
+                  child: Container(
+                    width: 200,
+                    child: TextFormField(
+                      textAlign: TextAlign.center,
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(5),
+                      ],
+                      controller: textController,
+                      autocorrect: true,
+                      decoration:
+                      InputDecoration(hintText: 'Enter State here'),
+                      onChanged: _onChanged,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Please enter your ZipCode';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 75.0,
+                  width: 200.0,
+                  padding: EdgeInsets.fromLTRB(50, 20, 50, 20),
+                  child: RaisedButton(
+                    color: Colors.green[700],
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0)),
+                    child: Text("Submit",
+                        style: TextStyle(
+                          color: Colors.grey[200],
+                        )),
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        Navigator.push(
+                            context, MaterialPageRoute(settings: RouteSettings(name: "/DontKnow"),builder: (context) => DontKnow()));
+                      }
+                    },
+                  ),
+                ),
               ],
             ),
           ),
