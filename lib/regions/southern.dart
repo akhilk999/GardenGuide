@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gardening_app/Starting a Garden/step2.dart';
+import 'package:gardening_app/search.dart';
 
-class DontKnow extends StatefulWidget {
+class southernRegion extends StatefulWidget {
   @override
-  _DontKnowState createState() => _DontKnowState();
+  _southernRegionState createState() => _southernRegionState();
 }
 
-class _DontKnowState extends State<DontKnow> {
+class _southernRegionState extends State<southernRegion> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +16,7 @@ class _DontKnowState extends State<DontKnow> {
           color: Colors.grey[200],
         ),
         title: Text(
-            "Starting a Garden",
+            region,
             style: TextStyle(fontSize: 20,color: Colors.grey[200],)),
         backgroundColor: Colors.green[600],
       ),
@@ -24,12 +25,30 @@ class _DontKnowState extends State<DontKnow> {
           children: [
             Flexible(
               child: FractionallySizedBox(
+                heightFactor: 0.1,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0,10,0,8),
+              child: Text('Southern Region', style: TextStyle(fontSize: 20)),
+            ),
+            Flexible(
+              child: FractionallySizedBox(
                 heightFactor: 0.3,
               ),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(0,10,0,8),
-              child: Text('Step 1: Figure out what type of ', style: TextStyle(fontSize: 20)),
+              child: Text('Common Plants/Best Plants to Grow: ', style: TextStyle(fontSize: 20)),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0,10,0,8),
+              child: Text('Fiddlewood, Ashe Juniper, Blue Ridge Goldenrod', style: TextStyle(fontSize: 15)),
+            ),
+            Flexible(
+              child: FractionallySizedBox(
+                heightFactor: 0.3,
+              ),
             ),
             ElevatedButton(onPressed:() {
               Navigator.push(

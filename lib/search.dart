@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:gardening_app/regions/idk.dart';
+import 'package:gardening_app/regions/southern.dart';
+import 'package:gardening_app/regions/newengland.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 
+late String region;
 class Search extends StatefulWidget {
   @override
   _SearchState createState() => _SearchState();
@@ -15,6 +17,7 @@ class _SearchState extends State<Search> {
   final _formKey = GlobalKey<FormState>();
 
   _onChanged(String value) {
+    region = value;
     setState(() {
       charLength = value.length;
     });
@@ -59,23 +62,6 @@ class _SearchState extends State<Search> {
                   ),
                 ),
               ),
-                SizedBox(
-                  width: 350,
-                  child: TextField(
-                    textAlign: TextAlign.center,
-                    onChanged: (value) {
-                      search = value;
-                      /*if (value == 'Texas') {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(settings: RouteSettings(name: "/DontKnow"),builder: (context) => DontKnow()));
-                    }*/
-                    },
-                    decoration: InputDecoration(
-                      hintText: 'Search',
-                    ),
-                  ),
-                ),
                 Form(
                   key: _formKey,
                   child: Container(
@@ -83,7 +69,7 @@ class _SearchState extends State<Search> {
                     child: TextFormField(
                       textAlign: TextAlign.center,
                       inputFormatters: [
-                        LengthLimitingTextInputFormatter(5),
+                        //LengthLimitingTextInputFormatter(5),
                       ],
                       controller: textController,
                       autocorrect: true,
@@ -92,7 +78,7 @@ class _SearchState extends State<Search> {
                       onChanged: _onChanged,
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return 'Please enter your ZipCode';
+                          return 'Please enter your state';
                         }
                         return null;
                       },
@@ -112,9 +98,22 @@ class _SearchState extends State<Search> {
                           color: Colors.grey[200],
                         )),
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) {
+                      if (region == "Texas" || region == "Louisiana" || region == "Arkansas" || region == "Alabama" ||
+                          region == "Mississippi" || region == "Georgia" || region == "South Carolina" || region == "North Carolina" ||
+                          region == "Tennessee" || region == "Kentucky" || region == "Virginia" || region == "West Virginia" || region == "Florida") {
                         Navigator.push(
-                            context, MaterialPageRoute(settings: RouteSettings(name: "/DontKnow"),builder: (context) => DontKnow()));
+                            context, MaterialPageRoute(settings: RouteSettings(name: "/southernRegion"),builder: (context) => southernRegion()));
+                        if (_formKey.currentState!.validate()) {
+                          return null;
+                        }
+                      }
+                      if (region == "Maine" || region == "New Hampshire" || region == "Vermont" || region == "Massachusetts" ||
+                          region == "Rhode Island" || region == "Connecticut") {
+                        Navigator.push(
+                            context, MaterialPageRoute(settings: RouteSettings(name: "/newEnglandRegion"),builder: (context) => newEnglandRegion()));
+                        if (_formKey.currentState!.validate()) {
+                          return null;
+                        }
                       }
                     },
                   ),
