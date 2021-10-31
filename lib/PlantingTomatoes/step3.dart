@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:gardening_app/Starting a Garden/step2.dart';
+import 'package:gardening_app/PlantingTomatoes/step4.dart';
 
-class Step1 extends StatefulWidget {
+class Step3 extends StatefulWidget {
   @override
-  _Step1State createState() => _Step1State();
+  _Step3State createState() => _Step3State();
 }
 
-class _Step1State extends State<Step1> {
+class _Step3State extends State<Step3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +15,7 @@ class _Step1State extends State<Step1> {
           color: Colors.grey[200],
         ),
         title: Text(
-            "Starting a Garden",
+            "Planting Tomatoes",
             style: TextStyle(fontSize: 20,color: Colors.grey[200],)),
         backgroundColor: Colors.green[600],
       ),
@@ -29,18 +29,14 @@ class _Step1State extends State<Step1> {
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(0,10,0,8),
-              child: Text('Step 1: Figure out what type of ', style: TextStyle(fontSize: 17)),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(0,0,0,8),
-              child: Text('garden you would like to have.', style: TextStyle(fontSize: 17)),
+              child: Text('Step 3: Dump some starting mix or soil into the pot, but make sure that the soil is evenly distributed.', style: TextStyle(fontSize: 20)),
             ),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.5,
               ),
             ),
-            Image.asset('images/flower-garden.jpg', scale: 13),
+            Image.asset('NEED IMAGE', scale: 13),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.1,
@@ -48,44 +44,33 @@ class _Step1State extends State<Step1> {
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(22.0,0,0,0),
-              child: Text('Flower gardens are used to grow flowers, tulips, and other angiosperms.', style: TextStyle(fontSize: 13)),
+              child: Text('When entering the soil, don’t fill the pot completely.', style: TextStyle(fontSize: 13)),
             ),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.2,
               ),
             ),
-            Image.asset('images/vegetable-garden.jpg', scale: 10),
+            Image.asset('NEED PICTURE', scale: 10),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.1,
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(22,0,15,0),
-              child: Text('Vegetable gardens are used to grow legumes, vegetables, and fruit-bearing plants.', style: TextStyle(fontSize: 13)),
+              padding: EdgeInsets.fromLTRB(22.0,0,0,0),
+              child: Text(' Fill the pot with 6 inches to spare, and move on to the next step.', style: TextStyle(fontSize: 13)),
             ),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.3,
               ),
             ),
-            Image.asset('images/herb-garden.jpg', scale: 14),
-            Flexible(
-              child: FractionallySizedBox(
-                heightFactor: 0.1,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(22,0,15,0),
-              child: Text('Herb gardens are used to grow basil, mint, coriander, and other herbs.', style: TextStyle(fontSize: 13)),
-            ),
             ElevatedButton(onPressed:() {
               Navigator.push(
                   context,
-                  MaterialPageRoute(settings: RouteSettings(name: "/Step2"),builder: (context) => Step2()));
+                  MaterialPageRoute(settings: RouteSettings(name: "/Step4"),builder: (context) => Step4()));
             }, child: Text('Next')),
-
           ],
         ),
       ),

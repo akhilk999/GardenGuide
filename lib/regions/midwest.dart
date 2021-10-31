@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gardening_app/Starting a Garden/step2.dart';
-import 'package:gardening_app/search.dart';
+import 'package:gardening_app/Starting a Garden/recs.dart';
 
 class midwestRegion extends StatefulWidget {
   @override
@@ -42,7 +42,7 @@ class _midwestRegionState extends State<midwestRegion> {
               child: Text('Common Plants/Best Plants to Grow: ', style: TextStyle(fontSize: 20)),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(0,10,0,8),
+              padding: EdgeInsets.fromLTRB(20,10,10,8),
               child: Text('Cardinal Flower, Prairie Dropseed, Wild Bergamot', style: TextStyle(fontSize: 15)),
             ),
             Flexible(

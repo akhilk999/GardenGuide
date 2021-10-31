@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gardening_app/Starting a Garden/step1.dart';
+import 'package:gardening_app/PlantingTomatoes/step1.dart';
 import 'package:gardening_app/Starting a Garden/recs.dart';
 
 class Tutorial extends StatefulWidget {
@@ -37,17 +38,17 @@ class _TutorialState extends State<Tutorial> {
                   MaterialPageRoute(settings: RouteSettings(name: "/Step1"),builder: (context) => Step1()));
               },
               child: Text('Starting a Garden',
-                 // style: TextStyle(color: Colors.black)
+                 style: TextStyle(fontWeight: FontWeight.bold,)
               )),
             TextButton(
                 style: TextButton.styleFrom(textStyle: TextStyle(fontSize: 20)),
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(settings: RouteSettings(name: "/Recs"),builder: (context) => Recs()));
+                      MaterialPageRoute(settings: RouteSettings(name: "/Step1Tomato"),builder: (context) => Step1Tomato()));
                 },
-                child: Text('Recommendations',
-                  // style: TextStyle(color: Colors.black)
+                child: Text('Planting Tomatoes',
+                    style: TextStyle(fontWeight: FontWeight.bold,)
                 )),
           ],
         ),

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:gardening_app/Starting a Garden/step2.dart';
-import 'package:gardening_app/Starting a Garden/recs.dart';
+import 'package:gardening_app/PlantingTomatoes/step6.dart';
 
-class rockyMountains extends StatefulWidget {
+class Step5 extends StatefulWidget {
   @override
-  _rockyMountainsState createState() => _rockyMountainsState();
+  _Step5State createState() => _Step5State();
 }
 
-class _rockyMountainsState extends State<rockyMountains> {
+class _Step5State extends State<Step5> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +15,7 @@ class _rockyMountainsState extends State<rockyMountains> {
           color: Colors.grey[200],
         ),
         title: Text(
-            region,
+            "Planting Tomatoes",
             style: TextStyle(fontSize: 20,color: Colors.grey[200],)),
         backgroundColor: Colors.green[600],
       ),
@@ -25,35 +24,37 @@ class _rockyMountainsState extends State<rockyMountains> {
           children: [
             Flexible(
               child: FractionallySizedBox(
+                heightFactor: 0.3,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0,10,0,8),
+              child: Text('Step 5: Water the seeds with the spray bottle, but make sure not to give the seeds too much water. Too much water can kill the tomatoes.', style: TextStyle(fontSize: 20)),
+            ),
+            Flexible(
+              child: FractionallySizedBox(
+                heightFactor: 0.5,
+              ),
+            ),
+            Image.asset('NEED IMAGE', scale: 13),
+            Flexible(
+              child: FractionallySizedBox(
                 heightFactor: 0.1,
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(0,10,0,8),
-              child: Text('Rocky Mountains', style: TextStyle(fontSize: 20)),
+              padding: EdgeInsets.fromLTRB(22.0,0,0,0),
+              child: Text('Try to do 2-3 sprays, depending on how many seeds you planted.', style: TextStyle(fontSize: 13)),
             ),
             Flexible(
               child: FractionallySizedBox(
-                heightFactor: 0.3,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(0,10,0,8),
-              child: Text('Common Plants/Best Plants to Grow: ', style: TextStyle(fontSize: 20)),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20,10,10,8),
-              child: Text('Boulder Raspberry, Rocky Mountain Juniper, Shrubby Cinquefoil', style: TextStyle(fontSize: 15)),
-            ),
-            Flexible(
-              child: FractionallySizedBox(
-                heightFactor: 0.3,
+                heightFactor: 0.2,
               ),
             ),
             ElevatedButton(onPressed:() {
               Navigator.push(
                   context,
-                  MaterialPageRoute(settings: RouteSettings(name: "/Step2"),builder: (context) => Step2()));
+                  MaterialPageRoute(settings: RouteSettings(name: "/Step6"),builder: (context) => Step6()));
             }, child: Text('Next')),
           ],
         ),

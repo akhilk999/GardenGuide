@@ -32,33 +32,23 @@ class _ContactState extends State<Contact>{
                   )),
 
               Padding(
-                padding: EdgeInsets.fromLTRB(0,10,0,8),
-                child: Text('   If you have any questions or suggestions feel free to contact us through either our email or phone number ', style: TextStyle(fontSize: 20)),
+                padding: EdgeInsets.fromLTRB(22,10,10,8),
+                child: Text('If you have any questions or suggestions, feel free to contact us through either our email or phone number!', style: TextStyle(fontSize: 17)),
               ),
-
-              Padding(
-                    padding: EdgeInsets.fromLTRB(0,10,0,8),
-                    child: Text('Phone Number:972-469-3673 ', style: TextStyle(fontSize: 20)),
-                  ),
-
-
-              Padding(
-                padding: EdgeInsets.fromLTRB(0,10,0,8),
-                child: Text('Email :gardeningapp.com@gmail.com ', style: TextStyle(fontSize: 20)),
-              ),
-
-
+              Align(alignment: Alignment.centerLeft,
+                  child: Container(child: Padding(
+                    padding: EdgeInsets.fromLTRB(22,10,0,8),
+                    child: Text('Phone Number: 972-469-3673 ', style: TextStyle(fontSize: 18)),
+                  ))),
+              Align(alignment: Alignment.centerLeft,
+                  child: Container(child: Padding(
+                    padding: EdgeInsets.fromLTRB(22,10,0,8),
+                    child: Text('Email: gardeningapp.com@gmail.com ', style: TextStyle(fontSize: 18)),
+                  ))),
                 ],
-
-
-
-
                 )
-
           )
         );
-
-
   }
 }
 

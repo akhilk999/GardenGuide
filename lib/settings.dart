@@ -30,18 +30,17 @@ class _SettingsState extends State<Settings> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Flexible(
-                  child: FractionallySizedBox(
-                    //heightFactor: 0.005,
-                  ),
-                ),
+                SizedBox(height: 25),
                 Text('Appearance',style: TextStyle(fontSize: 30)),
-                Flexible(
-                  child: FractionallySizedBox(
-                    heightFactor: 0.9,
+                SizedBox(height: 25),
+                Switch(value: isSwitched, onChanged: (state){
+                  setState(() {
+                    this.isSwitched = state;
+                    _incrementCounter();
 
-                  ),
-                ),
+                  });
+                }),
+                SizedBox(height: 250),
                 TextButton(
                     style: TextButton.styleFrom(textStyle: TextStyle(fontSize: 20)),
                     onPressed: () {
@@ -50,15 +49,8 @@ class _SettingsState extends State<Settings> {
                           MaterialPageRoute(settings: RouteSettings(name: "/Contact"),builder: (context) => Contact()));
                     },
                     child: Text('Contact Us',
-                      // style: TextStyle(color: Colors.black)
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)
                     )),
-                Switch(value: isSwitched, onChanged: (state){
-                  setState(() {
-                    this.isSwitched = state;
-                    _incrementCounter();
-
-                  });
-                })
               ]
           ),
         ),

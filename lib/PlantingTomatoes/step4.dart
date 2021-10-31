@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:gardening_app/Starting a Garden/step2.dart';
+import 'package:gardening_app/PlantingTomatoes/step5.dart';
 
-class Step1 extends StatefulWidget {
+class Step4 extends StatefulWidget {
   @override
-  _Step1State createState() => _Step1State();
+  _Step4State createState() => _Step4State();
 }
 
-class _Step1State extends State<Step1> {
+class _Step4State extends State<Step4> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +15,7 @@ class _Step1State extends State<Step1> {
           color: Colors.grey[200],
         ),
         title: Text(
-            "Starting a Garden",
+            "Planting Tomatoes",
             style: TextStyle(fontSize: 20,color: Colors.grey[200],)),
         backgroundColor: Colors.green[600],
       ),
@@ -29,18 +29,14 @@ class _Step1State extends State<Step1> {
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(0,10,0,8),
-              child: Text('Step 1: Figure out what type of ', style: TextStyle(fontSize: 17)),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(0,0,0,8),
-              child: Text('garden you would like to have.', style: TextStyle(fontSize: 17)),
+              child: Text('Step 4: Place the 1-2 tomato seeds into the soil, and if you enter in 2 seeds, make sure that the location of the seeds is evenly distributed.', style: TextStyle(fontSize: 20)),
             ),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.5,
               ),
             ),
-            Image.asset('images/flower-garden.jpg', scale: 13),
+            Image.asset('NEED IMAGE', scale: 13),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.1,
@@ -48,44 +44,34 @@ class _Step1State extends State<Step1> {
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(22.0,0,0,0),
-              child: Text('Flower gardens are used to grow flowers, tulips, and other angiosperms.', style: TextStyle(fontSize: 13)),
+              child: Text('This ensures that when they grow and get bigger, they have space for their roots to expand.', style: TextStyle(fontSize: 13)),
             ),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.2,
               ),
             ),
-            Image.asset('images/vegetable-garden.jpg', scale: 10),
+            Image.asset('NEED IMAGE', scale: 13),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.1,
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(22,0,15,0),
-              child: Text('Vegetable gardens are used to grow legumes, vegetables, and fruit-bearing plants.', style: TextStyle(fontSize: 13)),
+              padding: EdgeInsets.fromLTRB(22.0,0,0,0),
+              child: Text('If you want, add in a little bit of fertilizer to help the tomatoes grow. Don’t add too much, and just add a thin layer if wanted.', style: TextStyle(fontSize: 13)),
             ),
             Flexible(
               child: FractionallySizedBox(
-                heightFactor: 0.3,
+                heightFactor: 0.2,
               ),
             ),
-            Image.asset('images/herb-garden.jpg', scale: 14),
-            Flexible(
-              child: FractionallySizedBox(
-                heightFactor: 0.1,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(22,0,15,0),
-              child: Text('Herb gardens are used to grow basil, mint, coriander, and other herbs.', style: TextStyle(fontSize: 13)),
-            ),
+
             ElevatedButton(onPressed:() {
               Navigator.push(
                   context,
-                  MaterialPageRoute(settings: RouteSettings(name: "/Step2"),builder: (context) => Step2()));
+                  MaterialPageRoute(settings: RouteSettings(name: "/Step5"),builder: (context) => Step5()));
             }, child: Text('Next')),
-
           ],
         ),
       ),

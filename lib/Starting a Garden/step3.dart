@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gardening_app/Starting a Garden/recs.dart';
 import 'package:gardening_app/Starting a Garden/step5.dart';
+import 'package:gardening_app/search.dart';
 
 class Step3 extends StatefulWidget {
   @override
@@ -34,21 +35,11 @@ class _Step3State extends State<Step3> {
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(0,0,0,10),
-              child: Text('For help on deciding, go to our recommendations page:', style: TextStyle(fontSize: 15)),
+              child: Text('For help on deciding, go to our search page.', style: TextStyle(fontSize: 15)),
             ),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.5,
-              ),
-            ),
-            ElevatedButton(onPressed:() {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Recs()));
-            }, child: Text('Recommendations')),
-            Flexible(
-              child: FractionallySizedBox(
-                heightFactor: 0.8,
               ),
             ),
             Padding(

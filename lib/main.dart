@@ -7,10 +7,8 @@ import 'settings.dart';
 import 'package:gardening_app/tutorials.dart';
 
 void main() {
-  runApp(MainScreen(
-  ));
+  runApp(MainScreen());
 }
-
 
 class MainScreen extends StatefulWidget {
   @override
@@ -25,13 +23,9 @@ class _MainScreenState extends State<MainScreen> {
         builder: (context, _brightness) {
           return MaterialApp(
               theme: ThemeData(
-                  primarySwatch: Colors.blue,
-                  brightness: _brightness
-              ),
-              home: BottomBar()
-          );
-        }
-    );
+                  primarySwatch: Colors.blue, brightness: _brightness),
+              home: BottomBar());
+        });
   }
 }
 
@@ -39,7 +33,6 @@ class BottomBar extends StatefulWidget {
   @override
   _BottomBarState createState() => _BottomBarState();
 }
-
 
 class _BottomBarState extends State<BottomBar> {
   int _currentIndex = 0;
@@ -52,13 +45,11 @@ class _BottomBarState extends State<BottomBar> {
     Settings(),
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: children[_currentIndex],
-
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 25,
         selectedFontSize: 15,
@@ -71,23 +62,40 @@ class _BottomBarState extends State<BottomBar> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Dashboard'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
           BottomNavigationBarItem(icon: Icon(Icons.help), label: 'Tutorials'),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'Reminders'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.notifications), label: 'Reminders'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.settings), label: 'Settings'),
         ],
         onTap: (index) {
           setState(() {
             _currentIndex = index;
-            switch(index) {
-              case 0: {_title = 'Dashboard';}
-              break;
-              case 1: {_title = 'Search';}
-              break;
-              case 2: {_title = 'Tutorials';}
-              break;
-              case 3: {_title = 'Reminders';}
-              break;
-              case 4: {_title = 'Settings';}
-              break;
+            switch (index) {
+              case 0:
+                {
+                  _title = 'Dashboard';
+                }
+                break;
+              case 1:
+                {
+                  _title = 'Search';
+                }
+                break;
+              case 2:
+                {
+                  _title = 'Tutorials';
+                }
+                break;
+              case 3:
+                {
+                  _title = 'Reminders';
+                }
+                break;
+              case 4:
+                {
+                  _title = 'Settings';
+                }
+                break;
             }
           });
         },
@@ -157,4 +165,3 @@ class _BottomBarState extends State<BottomBar> {
     );
   }
 }*/
-
