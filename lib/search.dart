@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gardening_app/regions/mid_atlantic.dart';
+import 'package:gardening_app/regions/midwest.dart';
+import 'package:gardening_app/regions/pacificCoastal.dart';
+import 'package:gardening_app/regions/rockymountains.dart';
 import 'package:gardening_app/regions/southern.dart';
 import 'package:gardening_app/regions/newengland.dart';
+import 'package:gardening_app/regions/southwest.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 
 late String region;
@@ -98,9 +103,9 @@ class _SearchState extends State<Search> {
                           color: Colors.grey[200],
                         )),
                     onPressed: () {
-                      if (region == "Texas" || region == "Louisiana" || region == "Arkansas" || region == "Alabama" ||
+                      if (region == "Louisiana" || region == "Arkansas" || region == "Alabama" ||
                           region == "Mississippi" || region == "Georgia" || region == "South Carolina" || region == "North Carolina" ||
-                          region == "Tennessee" || region == "Kentucky" || region == "Virginia" || region == "West Virginia" || region == "Florida") {
+                          region == "Tennessee" || region == "Kentucky" || region == "Florida") {
                         Navigator.push(
                             context, MaterialPageRoute(settings: RouteSettings(name: "/southernRegion"),builder: (context) => southernRegion()));
                         if (_formKey.currentState!.validate()) {
@@ -111,6 +116,44 @@ class _SearchState extends State<Search> {
                           region == "Rhode Island" || region == "Connecticut") {
                         Navigator.push(
                             context, MaterialPageRoute(settings: RouteSettings(name: "/newEnglandRegion"),builder: (context) => newEnglandRegion()));
+                        if (_formKey.currentState!.validate()) {
+                          return null;
+                        }
+                      }
+                      if (region == "New York" || region == "New Jersey" || region == "Pennsylvania" || region == "Delaware" ||
+                          region == "Maryland" || region == "Virginia" || region == "West Virginia" || region == "Ohio") {
+                        Navigator.push(
+                            context, MaterialPageRoute(settings: RouteSettings(name: "/southernRegion"),builder: (context) => midAtlanticRegion()));
+                        if (_formKey.currentState!.validate()) {
+                          return null;
+                        }
+                      }
+                      if (region == "Illinois" || region == "Indiana" || region == "Iowa" || region == "Kansas" || region == "Wisconsin" ||
+                          region == "Michigan" || region == "Minnesota" || region == "Missouri" || region == "Nebraska") {
+                        Navigator.push(
+                            context, MaterialPageRoute(settings: RouteSettings(name: "/southernRegion"),builder: (context) => midwestRegion()));
+                        if (_formKey.currentState!.validate()) {
+                          return null;
+                        }
+                      }
+                      if (region == "Colorado" || region == "Montana" || region == "New Mexico" || region == "North Dakota" || region == "Oklahoma" ||
+                          region == "South Dakota" || region == "Texas" || region == "Wyoming") {
+                        Navigator.push(
+                            context, MaterialPageRoute(settings: RouteSettings(name: "/southernRegion"),builder: (context) => southwestRegion()));
+                        if (_formKey.currentState!.validate()) {
+                          return null;
+                        }
+                      }
+                      if (region == "California" || region == "Oregon" || region == "Nevada" || region == "Arizona" || region == "Washington" || region == "Idaho" || region == "Utah") {
+                        Navigator.push(
+                            context, MaterialPageRoute(settings: RouteSettings(name: "/southernRegion"),builder: (context) => rockyMountains()));
+                        if (_formKey.currentState!.validate()) {
+                          return null;
+                        }
+                      }
+                      if (region == "Hawaii" || region == "Alaska") {
+                        Navigator.push(
+                            context, MaterialPageRoute(settings: RouteSettings(name: "/southernRegion"),builder: (context) => pacificCoastalRegion()));
                         if (_formKey.currentState!.validate()) {
                           return null;
                         }
