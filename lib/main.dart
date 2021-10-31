@@ -3,6 +3,7 @@ import 'package:gardening_app/dashboard.dart';
 import 'package:gardening_app/reminders.dart';
 import 'package:gardening_app/search.dart';
 import 'settings.dart';
+
 import 'package:gardening_app/tutorials.dart';
 
 void main() {

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:gardening_app/main.dart';
+import 'package:gardening_app/Contact.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Settings extends StatefulWidget {
   @override
   _SettingsState createState() => _SettingsState();
 }
+
+
+
 
 class _SettingsState extends State<Settings> {
   bool isSwitched = false;
@@ -35,13 +38,25 @@ class _SettingsState extends State<Settings> {
                 Text('Appearance',style: TextStyle(fontSize: 30)),
                 Flexible(
                   child: FractionallySizedBox(
-                    heightFactor: 0.1,
+                    heightFactor: 0.9,
+
                   ),
                 ),
+                TextButton(
+                    style: TextButton.styleFrom(textStyle: TextStyle(fontSize: 20)),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(settings: RouteSettings(name: "/Contact"),builder: (context) => Contact()));
+                    },
+                    child: Text('Contact Us',
+                      // style: TextStyle(color: Colors.black)
+                    )),
                 Switch(value: isSwitched, onChanged: (state){
                   setState(() {
                     this.isSwitched = state;
                     _incrementCounter();
+
                   });
                 })
               ]
@@ -49,10 +64,13 @@ class _SettingsState extends State<Settings> {
         ),
     );
   }
+
   void _incrementCounter() {
     ThemeBuilder.of(context)!.changeTheme();
   }
 }
+
+
 
 
 class ThemeBuilder extends StatefulWidget {
@@ -100,3 +118,7 @@ class _ThemeBuilderState extends State<ThemeBuilder> {
     return widget.builder(context, _brightness);
   }
 }
+
+
+
+
