@@ -13,7 +13,7 @@ class Contact extends StatefulWidget {
 
 
 class _ContactState extends State<Contact>{
-  final snackBar = SnackBar(content: Text('Thank you for your feedback!'));
+
   var _name;
   var _email;
   var _message;
@@ -25,117 +25,114 @@ class _ContactState extends State<Contact>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-      iconTheme: IconThemeData(
-      color: Colors.grey[200]
-      ),
-     title:Text(
-        "Contact Us",
-          style: TextStyle(fontSize: 20,color: Colors.grey[200],)),
-        backgroundColor: Colors.green[600],
-      ),
+        appBar: AppBar(
+          iconTheme: IconThemeData(
+              color: Colors.grey[200]
+          ),
+          title:Text(
+              "Contact Us",
+              style: TextStyle(fontSize: 20,color: Colors.grey[200],)),
+          backgroundColor: Colors.green[600],
+        ),
         body: Center(
-          child: Column(
-            children:[
-              Flexible(
-                child:FractionallySizedBox(
-                  heightFactor: 0.3,
-                  )),
+            child: Column(
+              children:[
+                Flexible(
+                    child:FractionallySizedBox(
+                      heightFactor: 0.3,
+                    )),
 
-              Padding(
-                padding: EdgeInsets.fromLTRB(22,10,10,8),
-                child: Text('If you have any questions or suggestions, feel free to contact us through either our email or phone number!', style: TextStyle(fontSize: 17)),
-              ),
-              Align(alignment: Alignment.centerLeft,
-                  child: Container(child: Padding(
-                    padding: EdgeInsets.fromLTRB(22,10,0,8),
-                    child: Text('Phone Number: 123-456-7890 ', style: TextStyle(fontSize: 18)),
-                  ))),
-              Align(alignment: Alignment.centerLeft,
-                  child: Container(child: Padding(
-                    padding: EdgeInsets.fromLTRB(22,10,0,8),
-                    child: Text('Email: gardenguide@gmail.com ', style: TextStyle(fontSize: 18)),
-                  ))),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(22,10,10,8),
+                  child: Text('If you have any questions or suggestions, feel free to contact us through either our email or phone number!', style: TextStyle(fontSize: 17)),
+                ),
+                Align(alignment: Alignment.centerLeft,
+                    child: Container(child: Padding(
+                      padding: EdgeInsets.fromLTRB(22,10,0,8),
+                      child: Text('Phone Number: 123-456-7890 ', style: TextStyle(fontSize: 18)),
+                    ))),
+                Align(alignment: Alignment.centerLeft,
+                    child: Container(child: Padding(
+                      padding: EdgeInsets.fromLTRB(22,10,0,8),
+                      child: Text('Email: gardenguide@gmail.com ', style: TextStyle(fontSize: 18)),
+                    ))),
 
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child:Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget> [
-                    TextFormField(
-                      controller: nameCon,
-                      decoration: InputDecoration(
-                        hintText: 'John David'
-                      ),
-                      validator: (value){
-                        if (value!.isNotEmpty) {
-                          return 'Please enter name';
-                        }else if(value.isNotEmpty){
-                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                        }
-                      }
-                    ),
-                    TextFormField(
-                      controller: emailCon,
-                      decoration :InputDecoration(
-                        hintText: 'name@example.com'
+                Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child:Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: <Widget> [
+                          TextFormField(
+                              controller: nameCon,
+                              decoration: InputDecoration(
+                                  hintText: 'John David'
+                              ),
+                              validator: (value){
+                                if (value!.isNotEmpty) {
+                                  return 'Please enter name';
+                                }else if(value.isEmpty){
+                                  return 'Thank you for your feedback!';
+                                }
+                              }
+                          ),
+                          TextFormField(
+                              controller: emailCon,
+                              decoration :InputDecoration(
+                                  hintText: 'name@example.com'
 
-                      ),
-                      validator: (value){
-                        if (value!.isNotEmpty){
-                          return 'Please enter name';
-                        }else if(value.isNotEmpty){
-                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                        }
-                      }
+                              ),
+                              validator: (value){
+                                if (value!.isNotEmpty){
+                                  return 'Please enter name';
+                                }else if(value.isEmpty){
+                                  return 'Thank you for your feedback!';
+                                }
+                              }
 
-                    ),
+                          ),
 
-                    TextFormField(
-                      controller: messageCon,
-                        decoration :InputDecoration(
-                            hintText: 'Enter your message'
+                          TextFormField(
+                              controller: messageCon,
+                              decoration :InputDecoration(
+                                  hintText: 'Enter your message'
 
-                        ),
-                      validator: (value){
-                        if (value!.isNotEmpty){
-                          return 'Please enter name';
-                        }else if(value.isNotEmpty){
-                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                        }
-                      }
-                    ),
+                              ),
+                              validator: (value){
+                                if (value!.isNotEmpty){
+                                  return 'Please enter content';
+                                }else if(value.isEmpty){
+                                  return 'Thank you for your feedback!';
+                                }
+                              }
+                          ),
 
-                    RaisedButton(onPressed:(){
-                      if (_formKey.currentState!.validate()) {
-                        // If the form is valid, display a snackbar. In the real world,
-                        // you'd often call a server or save the information in a database.
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Processing Data')),
-                        );
-                      }
-                      setState(() {
-                        _name=nameCon.text;
-                        _email = emailCon.text;
-                        _message = messageCon.text;
-                        nameCon.clear();
-                        emailCon.clear();
-                        messageCon.clear();
-                      });
-                    },
-                    child:Text('Submit')
-                    ),
+                          RaisedButton(onPressed:(){
+                            setState(() {
+
+                              final text = 'Thank you for your feedback!';
+                              final snackBar = SnackBar(content: Text(text));
+                              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                              _name=nameCon.text;
+                              _email = emailCon.text;
+                              _message = messageCon.text;
+                              nameCon.clear();
+                              emailCon.clear();
+                              messageCon.clear();
+                            });
+                          },
+                              child:Text('Submit')
+                          ),
 
 
 
-                  ]
+                        ]
+                    )
                 )
-              )
-                ],
-                )
+              ],
+            )
 
-          )
-        );
+        )
+    );
   }
 }
 
