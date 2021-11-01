@@ -86,6 +86,10 @@ class _ContactState extends State<Contact>{
 
                     RaisedButton(onPressed:(){
                       setState(() {
+
+                        final text = 'Thank You for your feedback';
+                        final snackBar = SnackBar(content: Text(text));
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         _name=nameCon.text;
                         _email = emailCon.text;
                         _message = messageCon.text;
