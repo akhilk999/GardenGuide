@@ -45,10 +45,41 @@ class _ContactState extends State<Contact>{
                     padding: EdgeInsets.fromLTRB(22,10,0,8),
                     child: Text('Email: gardenguide@gmail.com ', style: TextStyle(fontSize: 18)),
                   ))),
+
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child:Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget> [
+                    TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Enter Your Name'
+                      )
+                    ),
+                    TextField(
+                      keyboardType : TextInputType.number,
+                      decoration :InputDecoration(
+                        hintText: 'Enter your email'
+
+                      )
+                    ),
+
+                    RaisedButton(onPressed:null,
+                    child:Text('Submit')
+                    ),
+
+
+
+                  ]
+                )
+              )
                 ],
                 )
+
           )
         );
   }
 }
+
+
 
