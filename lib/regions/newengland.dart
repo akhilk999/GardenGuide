@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gardening_app/Starting a Garden/step2.dart';
-import 'package:gardening_app/Starting a Garden/recs.dart';
+import 'package:gardening_app/search.dart';
 
 class newEnglandRegion extends StatefulWidget {
   @override
@@ -43,18 +43,19 @@ class _newEnglandRegionState extends State<newEnglandRegion> {
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(20,10,10,8),
-              child: Text('Native New England Perennials', style: TextStyle(fontSize: 15)),
+              child: Text('Native New England Perennials', style: TextStyle(fontSize: 16)),
             ),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.3,
               ),
             ),
-            ElevatedButton(onPressed:() {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(settings: RouteSettings(name: "/Step2"),builder: (context) => Step2()));
-            }, child: Text('Next')),
+            Image.asset('images/newengland.jpg', scale: 1.7),
+            Flexible(
+              child: FractionallySizedBox(
+                heightFactor: 0.3,
+              ),
+            ),
           ],
         ),
       ),

@@ -57,6 +57,22 @@ flutter:
     - images/combination.jpg
     - images/example1.jpg
     - images/example2.jpg
+    - images/newengland.jpg
+    - images/midatlantic.jpg
+    - images/southern.jpg
+    - images/midwest.jpg
+    - images/southwest.jpg
+    - images/pacificcoastal.jpg
+    - images/rockies.jpg
+    - images/soil.jpg
+    - images/can.jpg
+    - images/spray.jpg
+    - images/sink.webp
+    - images/soil.webp
+    - images/hand.jpg
+    - images/plant.webp
+    - images/field.jpg
+    - images/tree.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

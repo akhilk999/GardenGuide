@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gardening_app/Starting a Garden/step2.dart';
-import 'package:gardening_app/Starting a Garden/recs.dart';
+import 'package:gardening_app/search.dart';
 
 class southwestRegion extends StatefulWidget {
   @override
@@ -41,20 +41,44 @@ class _southwestRegionState extends State<southwestRegion> {
               padding: EdgeInsets.fromLTRB(0,10,0,8),
               child: Text('Common Plants/Best Plants to Grow: ', style: TextStyle(fontSize: 20)),
             ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20,10,10,8),
-              child: Text("Parry's Penstemon, Blackfoot Daisy, Desert Spoon, Black Dalea", style: TextStyle(fontSize: 15)),
+            Align(alignment: Alignment.centerLeft,
+              child: Container(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(50,10,10,0),
+                  child: Text("- Parry's Penstemon", style: TextStyle(fontSize: 16)),
+                ),
+              ),
+            ),
+            Align(alignment: Alignment.centerLeft,
+              child: Container(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(50,5,10,0),
+                  child: Text("- Blackfoot Daisy", style: TextStyle(fontSize: 16)),
+                ),
+              ),
+            ),
+            Align(alignment: Alignment.centerLeft,
+              child: Container(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(50,5,10,0),
+                  child: Text("- Desert Spoon", style: TextStyle(fontSize: 16)),
+                ),
+              ),
+            ),
+            Align(alignment: Alignment.centerLeft,
+              child: Container(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(50,5,10,0),
+                  child: Text("- Black Dalea", style: TextStyle(fontSize: 16)),
+                ),
+              ),
             ),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.3,
               ),
             ),
-            ElevatedButton(onPressed:() {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(settings: RouteSettings(name: "/Step2"),builder: (context) => Step2()));
-            }, child: Text('Next')),
+            Image.asset('images/southwest.jpg', scale: 1.7),
           ],
         ),
       ),

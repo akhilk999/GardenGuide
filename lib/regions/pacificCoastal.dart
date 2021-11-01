@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gardening_app/Starting a Garden/step2.dart';
-import 'package:gardening_app/Starting a Garden/recs.dart';
+import 'package:gardening_app/search.dart';
 
 class pacificCoastalRegion extends StatefulWidget {
   @override
@@ -41,20 +41,36 @@ class _pacificCoastalRegionState extends State<pacificCoastalRegion> {
               padding: EdgeInsets.fromLTRB(0,10,0,8),
               child: Text('Common Plants/Best Plants to Grow: ', style: TextStyle(fontSize: 20)),
             ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20,10,10,8),
-              child: Text('California poppies, lupine, redwood trees, hawkbits,', style: TextStyle(fontSize: 15)),
+            Align(alignment: Alignment.centerLeft,
+              child: Container(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(50,10,10,0),
+                  child: Text("- California poppies", style: TextStyle(fontSize: 16)),
+                ),
+              ),
+            ),
+            Align(alignment: Alignment.centerLeft,
+              child: Container(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(50,5,10,0),
+                  child: Text("- Redwood trees", style: TextStyle(fontSize: 16)),
+                ),
+              ),
+            ),
+            Align(alignment: Alignment.centerLeft,
+              child: Container(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(50,5,10,0),
+                  child: Text("- Hawkbits", style: TextStyle(fontSize: 16)),
+                ),
+              ),
             ),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.3,
               ),
             ),
-            ElevatedButton(onPressed:() {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(settings: RouteSettings(name: "/Step2"),builder: (context) => Step2()));
-            }, child: Text('Next')),
+            Image.asset('images/pacificcoastal.jpg', scale: 1.7),
           ],
         ),
       ),

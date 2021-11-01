@@ -28,7 +28,7 @@ class _Step4State extends State<Step4> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(0,10,0,8),
+              padding: EdgeInsets.fromLTRB(10,10,10,8),
               child: Text('Step 4: Place the 1-2 tomato seeds into the soil, and if you enter in 2 seeds, make sure that the location of the seeds is evenly distributed.', style: TextStyle(fontSize: 20)),
             ),
             Flexible(
@@ -36,7 +36,7 @@ class _Step4State extends State<Step4> {
                 heightFactor: 0.5,
               ),
             ),
-            Image.asset('NEED IMAGE', scale: 13),
+            Image.asset('images/field.jpg', scale: 2),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.1,
@@ -51,7 +51,7 @@ class _Step4State extends State<Step4> {
                 heightFactor: 0.2,
               ),
             ),
-            Image.asset('NEED IMAGE', scale: 13),
+            Image.asset('images/tree.webp', scale: 1.5),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.1,

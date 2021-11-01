@@ -13,7 +13,7 @@ class Contact extends StatefulWidget {
 
 
 class _ContactState extends State<Contact>{
-
+  final snackBar = SnackBar(content: Text('Thank you for your feedback!'));
   var _name;
   var _email;
   var _message;
@@ -70,8 +70,8 @@ class _ContactState extends State<Contact>{
                       validator: (value){
                         if (value!.isNotEmpty) {
                           return 'Please enter name';
-                        }else if(value!.isEmpty){
-                          'Thank you for your feedback!';
+                        }else if(value.isNotEmpty){
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         }
                       }
                     ),
@@ -84,8 +84,8 @@ class _ContactState extends State<Contact>{
                       validator: (value){
                         if (value!.isNotEmpty){
                           return 'Please enter name';
-                        }else if(value!.isEmpty){
-                          'Thank you for your feedback!';
+                        }else if(value.isNotEmpty){
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         }
                       }
 
@@ -100,18 +100,21 @@ class _ContactState extends State<Contact>{
                       validator: (value){
                         if (value!.isNotEmpty){
                           return 'Please enter name';
-                        }else if(value!.isEmpty){
-                          'Thank you for your feedback!';
+                        }else if(value.isNotEmpty){
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         }
                       }
                     ),
 
                     RaisedButton(onPressed:(){
+                      if (_formKey.currentState!.validate()) {
+                        // If the form is valid, display a snackbar. In the real world,
+                        // you'd often call a server or save the information in a database.
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Processing Data')),
+                        );
+                      }
                       setState(() {
-
-                        final text = 'Thank you for your feedback!';
-                        final snackBar = SnackBar(content: Text(text));
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         _name=nameCon.text;
                         _email = emailCon.text;
                         _message = messageCon.text;

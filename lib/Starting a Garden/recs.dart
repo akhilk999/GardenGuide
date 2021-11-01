@@ -9,7 +9,6 @@ import 'package:gardening_app/regions/newengland.dart';
 import 'package:gardening_app/regions/southwest.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 
-late String region ='';
 class Recs extends StatefulWidget {
   const Recs({Key? key}) : super(key: key);
   @override
@@ -23,7 +22,6 @@ class _RecsState extends State<Recs> {
   final _formKey = GlobalKey<FormState>();
 
   _onChanged(String value) {
-    region = value;
     setState(() {
       charLength = value.length;
     });

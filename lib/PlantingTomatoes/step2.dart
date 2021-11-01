@@ -28,7 +28,7 @@ class _Step2State extends State<Step2> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(0,10,0,8),
+              padding: EdgeInsets.fromLTRB(10,10,10,8),
               child: Text('Step 2: Place the Tomato pot in an ideal location.', style: TextStyle(fontSize: 20)),
             ),
             Flexible(
@@ -36,7 +36,7 @@ class _Step2State extends State<Step2> {
                 heightFactor: 0.5,
               ),
             ),
-            Image.asset('NEED IMAGE', scale: 13),
+            Image.asset('images/soil.webp', scale: 2.1),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.1,
@@ -51,15 +51,15 @@ class _Step2State extends State<Step2> {
                 heightFactor: 0.2,
               ),
             ),
-            Image.asset('NEED PICTURE', scale: 10),
+            Image.asset('images/sink.webp', scale: 1.5),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.1,
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(22.0,0,0,0),
-              child: Text('make sure that it is next to a wall of some sort, to protect it from the wind.', style: TextStyle(fontSize: 13)),
+              padding: EdgeInsets.fromLTRB(22.0,0,10,0),
+              child: Text('Make sure that it is next to a wall of some sort, to protect it from the wind.', style: TextStyle(fontSize: 13)),
             ),
             Flexible(
               child: FractionallySizedBox(

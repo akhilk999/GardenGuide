@@ -28,7 +28,7 @@ class _Step3State extends State<Step3> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(0,10,0,8),
+              padding: EdgeInsets.fromLTRB(10,10,10,8),
               child: Text('Step 3: Dump some starting mix or soil into the pot, but make sure that the soil is evenly distributed.', style: TextStyle(fontSize: 20)),
             ),
             Flexible(
@@ -36,7 +36,7 @@ class _Step3State extends State<Step3> {
                 heightFactor: 0.5,
               ),
             ),
-            Image.asset('NEED IMAGE', scale: 13),
+            Image.asset('images/hand.jpg', scale: 1.5),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.1,
@@ -51,14 +51,14 @@ class _Step3State extends State<Step3> {
                 heightFactor: 0.2,
               ),
             ),
-            Image.asset('NEED PICTURE', scale: 10),
+            Image.asset('images/plant.webp', scale: 1.5),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.1,
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(22.0,0,0,0),
+              padding: EdgeInsets.fromLTRB(22.0,0,10,0),
               child: Text(' Fill the pot with 6 inches to spare, and move on to the next step.', style: TextStyle(fontSize: 13)),
             ),
             Flexible(

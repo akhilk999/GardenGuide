@@ -36,7 +36,6 @@ class _Step1TomatoState extends State<Step1Tomato> {
           heightFactor: 0.5,
         ),
       ),
-      Image.asset('NEED IMAGE', scale: 13),
       Flexible(
         child: FractionallySizedBox(
           heightFactor: 0.1,
@@ -51,7 +50,7 @@ class _Step1TomatoState extends State<Step1Tomato> {
           heightFactor: 0.2,
         ),
       ),
-      Image.asset('NEED PICTURE', scale: 10),
+      Image.asset('images/soil.jpg', scale: 1.4),
       Flexible(
         child: FractionallySizedBox(
           heightFactor: 0.1,
@@ -68,7 +67,7 @@ class _Step1TomatoState extends State<Step1Tomato> {
             heightFactor: 0.3,
           ),
         ),
-        Image.asset('NEED IMAGE', scale: 14),
+        Image.asset('images/can.jpg', scale: 1.4),
         Flexible(
           child: FractionallySizedBox(
             heightFactor: 0.1,
@@ -79,7 +78,7 @@ class _Step1TomatoState extends State<Step1Tomato> {
           child: Text('A plant container for the tomato to grow in. The ideal plant container for tomatoes is around 18 inches in diameter. '
               '(Only needed if you are doing a container garden)', style: TextStyle(fontSize: 13)),
         ),
-        Image.asset('NEED IMAGE', scale: 14),
+        Image.asset('images/spray.jpg', scale: 1.4),
         Flexible(
           child: FractionallySizedBox(
             heightFactor: 0.1,
