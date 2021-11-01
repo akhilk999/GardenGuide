@@ -28,15 +28,15 @@ class _Step5State extends State<Step5> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(0,10,0,8),
-              child: Text('Step 5: Water the seeds with the spray bottle, but make sure not to give the seeds too much water. Too much water can kill the tomatoes.', style: TextStyle(fontSize: 20)),
+              padding: EdgeInsets.fromLTRB(10,10,10,8),
+              child: Text('Step 5: Water the seeds with the spray bottle, but make sure not to give the seeds too much water. Too much water can kill the tomatoes.', style: TextStyle(fontSize: 17)),
             ),
             Flexible(
               child: FractionallySizedBox(
-                heightFactor: 0.5,
+                heightFactor: 0.3,
               ),
             ),
-            Image.asset('NEED IMAGE', scale: 13),
+            Image.asset('images/water.webp', scale: 2.2),
             Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.1,
@@ -44,7 +44,7 @@ class _Step5State extends State<Step5> {
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(22.0,0,0,0),
-              child: Text('Try to do 2-3 sprays, depending on how many seeds you planted.', style: TextStyle(fontSize: 13)),
+              child: Text('Try to do 2-3 sprays, depending on how many seeds you planted.', style: TextStyle(fontSize: 15)),
             ),
             Flexible(
               child: FractionallySizedBox(

@@ -40,6 +40,7 @@ class _TutorialState extends State<Tutorial> {
               child: Text('Starting a Garden',
                  style: TextStyle(fontWeight: FontWeight.bold,)
               )),
+            Image.asset('images/starting.jpg', scale: 1.6),
             TextButton(
                 style: TextButton.styleFrom(textStyle: TextStyle(fontSize: 20)),
                 onPressed: () {
@@ -50,6 +51,7 @@ class _TutorialState extends State<Tutorial> {
                 child: Text('Planting Tomatoes',
                     style: TextStyle(fontWeight: FontWeight.bold,)
                 )),
+            Image.asset('images/tomato3.jpg', scale: 1.6),
           ],
         ),
       ),
