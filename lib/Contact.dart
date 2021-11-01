@@ -62,26 +62,48 @@ class _ContactState extends State<Contact>{
                 child:Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget> [
-                    TextField(
+                    TextFormField(
                       controller: nameCon,
                       decoration: InputDecoration(
                         hintText: 'John David'
-                      )
+                      ),
+                      validator: (value){
+                        if (value!.isNotEmpty) {
+                          return 'Please enter name';
+                        }else if(value!.isEmpty){
+                          'Thank you for your feedback!';
+                        }
+                      }
                     ),
-                    TextField(
+                    TextFormField(
                       controller: emailCon,
                       decoration :InputDecoration(
                         hintText: 'name@example.com'
 
-                      )
+                      ),
+                      validator: (value){
+                        if (value!.isNotEmpty){
+                          return 'Please enter name';
+                        }else if(value!.isEmpty){
+                          'Thank you for your feedback!';
+                        }
+                      }
+
                     ),
 
-                    TextField(
+                    TextFormField(
                       controller: messageCon,
                         decoration :InputDecoration(
                             hintText: 'Enter your message'
 
-                        )
+                        ),
+                      validator: (value){
+                        if (value!.isNotEmpty){
+                          return 'Please enter name';
+                        }else if(value!.isEmpty){
+                          'Thank you for your feedback!';
+                        }
+                      }
                     ),
 
                     RaisedButton(onPressed:(){
