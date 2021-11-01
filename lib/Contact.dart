@@ -10,7 +10,18 @@ class Contact extends StatefulWidget {
   _ContactState createState() => _ContactState();
 }
 
+
+
 class _ContactState extends State<Contact>{
+
+  var _name;
+  var _email;
+  var _message;
+
+  final nameCon = new TextEditingController();
+  final emailCon = new TextEditingController();
+  final messageCon = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,19 +63,34 @@ class _ContactState extends State<Contact>{
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget> [
                     TextField(
+                      controller: nameCon,
                       decoration: InputDecoration(
                         hintText: 'Enter Your Name'
                       )
                     ),
                     TextField(
-                      keyboardType : TextInputType.number,
+                      controller: emailCon,
                       decoration :InputDecoration(
                         hintText: 'Enter your email'
 
                       )
                     ),
 
-                    RaisedButton(onPressed:null,
+                    TextField(
+                      controller: messageCon,
+                        decoration :InputDecoration(
+                            hintText: 'Enter your message'
+
+                        )
+                    ),
+
+                    RaisedButton(onPressed:(){
+                      setState(() {
+                        _name=nameCon.text;
+                        _email = emailCon.text;
+                        _message = messageCon.text;
+                      });
+                    },
                     child:Text('Submit')
                     ),
 
