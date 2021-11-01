@@ -93,6 +93,9 @@ class _ContactState extends State<Contact>{
                         _name=nameCon.text;
                         _email = emailCon.text;
                         _message = messageCon.text;
+                        nameCon.clear();
+                        emailCon.clear();
+                        messageCon.clear();
                       });
                     },
                     child:Text('Submit')
