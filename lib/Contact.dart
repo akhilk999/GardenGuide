@@ -65,13 +65,13 @@ class _ContactState extends State<Contact>{
                     TextField(
                       controller: nameCon,
                       decoration: InputDecoration(
-                        hintText: 'Enter Your Name'
+                        hintText: 'John David'
                       )
                     ),
                     TextField(
                       controller: emailCon,
                       decoration :InputDecoration(
-                        hintText: 'Enter your email'
+                        hintText: 'name@example.com'
 
                       )
                     ),
