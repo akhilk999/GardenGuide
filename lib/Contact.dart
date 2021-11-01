@@ -38,12 +38,12 @@ class _ContactState extends State<Contact>{
               Align(alignment: Alignment.centerLeft,
                   child: Container(child: Padding(
                     padding: EdgeInsets.fromLTRB(22,10,0,8),
-                    child: Text('Phone Number: 972-469-3673 ', style: TextStyle(fontSize: 18)),
+                    child: Text('Phone Number: 123-456-7890 ', style: TextStyle(fontSize: 18)),
                   ))),
               Align(alignment: Alignment.centerLeft,
                   child: Container(child: Padding(
                     padding: EdgeInsets.fromLTRB(22,10,0,8),
-                    child: Text('Email: gardeningapp.com@gmail.com ', style: TextStyle(fontSize: 18)),
+                    child: Text('Email: gardenguide@gmail.com ', style: TextStyle(fontSize: 18)),
                   ))),
                 ],
                 )
