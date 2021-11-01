@@ -44,7 +44,7 @@ class _ContactState extends State<Contact>{
 
                 Padding(
                   padding: EdgeInsets.fromLTRB(22,10,10,8),
-                  child: Text('If you have any questions or suggestions, feel free to contact us through either our email or phone number!', style: TextStyle(fontSize: 17)),
+                  child: Text('If you have any questions or suggestions, feel free to contact us through either our email or phone number!', style: TextStyle(fontSize: 19)),
                 ),
                 Align(alignment: Alignment.centerLeft,
                     child: Container(child: Padding(
@@ -62,6 +62,9 @@ class _ContactState extends State<Contact>{
                     child:Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: <Widget> [
+                          Container(
+                            height: 20,
+                          ),
                           TextFormField(
                               controller: nameCon,
                               decoration: InputDecoration(
@@ -105,7 +108,9 @@ class _ContactState extends State<Contact>{
                                 }
                               }
                           ),
-
+                          Container(
+                            height: 30,
+                          ),
                           RaisedButton(onPressed:(){
                             setState(() {
 
