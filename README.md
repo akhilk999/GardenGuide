@@ -9,3 +9,6 @@ GardenGuide is an app that helps provide users with a easier system to access in
 ## Resources
 
 Our app was built through the Flutter UI using Dart. 
+
+## Demo Video
+https://www.youtube.com/watch?v=4IhFeKL1lyI
