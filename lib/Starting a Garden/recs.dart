@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:gardening_app/regions/mid_atlantic.dart';
-import 'package:gardening_app/regions/midwest.dart';
-import 'package:gardening_app/regions/pacificCoastal.dart';
-import 'package:gardening_app/regions/rockymountains.dart';
-import 'package:gardening_app/regions/southern.dart';
-import 'package:gardening_app/regions/newengland.dart';
-import 'package:gardening_app/regions/southwest.dart';
+import 'package:gardenguide/regions/mid_atlantic.dart';
+import 'package:gardenguide/regions/midwest.dart';
+import 'package:gardenguide/regions/pacificCoastal.dart';
+import 'package:gardenguide/regions/rockymountains.dart';
+import 'package:gardenguide/regions/southern.dart';
+import 'package:gardenguide/regions/newengland.dart';
+import 'package:gardenguide/regions/southwest.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 
 class Recs extends StatefulWidget {

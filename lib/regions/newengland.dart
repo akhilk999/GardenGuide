@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gardening_app/Starting a Garden/step2.dart';
-import 'package:gardening_app/search.dart';
+import 'package:gardenguide/Starting a Garden/step2.dart';
+import 'package:gardenguide/search.dart';
 
 class newEnglandRegion extends StatefulWidget {
   @override

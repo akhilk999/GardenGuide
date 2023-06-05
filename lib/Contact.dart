@@ -111,6 +111,25 @@ class _ContactState extends State<Contact>{
                           Container(
                             height: 30,
                           ),
+                          ElevatedButton(
+                            //style: ButtonStyle(),
+                            onPressed: (){
+                              setState(() {
+
+                                final text = 'Thank you for your feedback!';
+                                final snackBar = SnackBar(content: Text(text));
+                                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                                _name=nameCon.text;
+                                _email = emailCon.text;
+                                _message = messageCon.text;
+                                nameCon.clear();
+                                emailCon.clear();
+                                messageCon.clear();
+                              });
+                            },
+                              child:Text('Submit')
+                          )
+                          /*
                           RaisedButton(onPressed:(){
                             setState(() {
 
@@ -127,9 +146,7 @@ class _ContactState extends State<Contact>{
                           },
                               child:Text('Submit')
                           ),
-
-
-
+                          */
                         ]
                     )
                 )

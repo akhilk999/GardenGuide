@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:gardening_app/dashboard.dart';
-import 'package:gardening_app/reminders.dart';
-import 'package:gardening_app/search.dart';
+import 'package:gardenguide/dashboard.dart';
+import 'package:gardenguide/reminders.dart';
+import 'package:gardenguide/search.dart';
 import 'settings.dart';
 
-import 'package:gardening_app/tutorials.dart';
+import 'package:gardenguide/tutorials.dart';
 
 void main() {
   runApp(MainScreen());

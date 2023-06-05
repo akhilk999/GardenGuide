@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gardening_app/Starting a Garden/step3.dart';
+import 'package:gardenguide/Starting a Garden/step3.dart';
 
 class Step2 extends StatefulWidget {
   @override
